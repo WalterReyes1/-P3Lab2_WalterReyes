@@ -12,11 +12,8 @@ using namespace std;
 	float aux3;
  float sumatoria(float total,float k,int n){
 	 
-	
-	
-	
-	if(k==n){
-	return sumatoria(total,k, n+1) ;
+	if(k==n-1){
+	return total;
 	}else{
 		aux= (2*n)-1;
 		aux2 = (n*(n+1));
@@ -24,9 +21,15 @@ using namespace std;
 		total= total+aux3;
 		return sumatoria(total,k,n+1);
 		
+		/*
+		aux = (2*n)-1/(n*(n+1);
+		total = total + aux;
+		
+		*/
 	}
 	
 }
+
 void ver (int a[],int tamano){
 	for(int i = 0; i<tamano;i++){
 		cout<<a[i]<<" "; 
@@ -49,31 +52,35 @@ int main(int argc, char** argv) {
 		cin>>menu;
 	
 		if(menu == 1){
-			string cadena;
-			cout<<"Ingrese cadena: ";
-			cin>>cadena;
-			for(int i = 0; i <= cadena.size()-1;i++){
-				char c1;
-				c1 = cadena[i];
-				if(c1==1 || c1== 0){
-					cout<<"Encontré un incio";
-					for(int j = i; j < cadena.size()-1;j++){
-						if(cadena[j]==1 || cadena[j]==0){
-							cout<<"Encontré un final";
-						}
-					
-					}	
-				
-				}
-				//cout<<c1<<end1;
-			}
+			string cad1;
+			cout << "Ingrese cadena: ";
+            cin >> cad1;
+            int answer = 0;
+
+            for (int i = 0; i < cad1.length(); i++){
+
+                if (cad1[i] == 'A' && i == 1){
+                    if ((cad1[i - 1] == '1' && cad1[i + 3] == '0')||(cad1[i - 1] == '0' && cad1[i + 3] == '1')||(cad1[i - 1] == '0' && cad1[i + 3] == '0')){
+                        answer = 0;
+                    }else{
+                        answer = 1;
+                    }
+                }
+                   
+       
+
 			
 				
 			
 			
 				
 		}// fin primer ejercicio;
-		
+            if (answer == 0){
+                cout << "falso. " << endl;
+            }else{
+                cout << "Verdadero" << endl;
+            }
+	}
 		if(menu == 2 ){
 			
 			int arreglo[20];
@@ -115,7 +122,7 @@ int main(int argc, char** argv) {
 	}	
 	
 	
-	
+
 }
 	
 	return 0;
