@@ -66,21 +66,38 @@ int main(int argc, char** argv) {
                         answer = 1;
                     }
                 }
-                   
-       
+                    if (answer == '0' && cad1[i + 2] == '0'){
+                        answer = 0;
+                    }else{
+                        answer = 1;
+                    }
+                	 if (cad1[i] == 'A'){
+                    if ((answer == 1 && cad1[i + 3] == '0')||(answer == 0 && cad1[i + 3] == '1')||(answer == 0 && cad1[i + 3] == '0')){
+                        answer = 0;
+                    }else{
+                        answer = 1;
+                    }
+                }else if (cad1[i] == 'O'){
+                    if (answer == 0 && cad1[i + 2] == '0'){
+                        answer = 0;
+                    }else{
+                        answer = 1;
+                    }
+                }
+            }
 
+            if (answer == 0){
+                cout << "falso. " << endl;
+            }else{
+                cout << "Verdadero" << endl;
+            }
 			
 				
 			
 			
 				
 		}// fin primer ejercicio;
-            if (answer == 0){
-                cout << "falso. " << endl;
-            }else{
-                cout << "Verdadero" << endl;
-            }
-	}
+		
 		if(menu == 2 ){
 			
 			int arreglo[20];
